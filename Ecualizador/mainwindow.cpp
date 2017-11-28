@@ -103,11 +103,11 @@ void MainWindow::update() {
     
 }
 
-void MainWindow::on_volumeSlider_valueChanged(int value){
+void MainWindow::on_volumen_valueChanged(int value){
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value);
+    dsp_->updateVolume(value);
     ;
 }
 
@@ -143,7 +143,7 @@ void MainWindow::on_Filtro32_valueChanged(int value32)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    dsp_->updateVolume(value32);
+    //dsp_->updatefiltro32(value32);
     this->repaint();
     ;
 }
@@ -153,7 +153,7 @@ void MainWindow::on_Filtro63_valueChanged(int value63)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value63);
+    //dsp_->updatefiltro63(value63);
     this->repaint();
     ;
 }
@@ -163,7 +163,7 @@ void MainWindow::on_Filtro125_valueChanged(int value125)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value125);
+    //dsp_->updatefiltro125(value125);
     this->repaint();
     ;
 }
@@ -173,7 +173,7 @@ void MainWindow::on_Filtro250_valueChanged(int value250)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value250);
+    //dsp_->updatefiltro250(value250);
     this->repaint();
     ;
 }
@@ -183,7 +183,7 @@ void MainWindow::on_Filtro500_valueChanged(int value500)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value500);
+    //dsp_->updatefiltro500(value500);
     this->repaint();
     ;
 }
@@ -193,7 +193,7 @@ void MainWindow::on_Filtro1k_valueChanged(int value1k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value1k);
+    //dsp_->updatefiltro1k(value1k);
     this->repaint();
     ;
 }
@@ -203,7 +203,7 @@ void MainWindow::on_Filtro2k_valueChanged(int value2k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value2k);
+    //dsp_->updatefiltro2k(value2k);
     this->repaint();
     ;
 }
@@ -213,7 +213,7 @@ void MainWindow::on_Filtro4k_valueChanged(int value4k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value4k);
+    //dsp_->updatefiltro4k(value4k);
     this->repaint();
     ;
 }
@@ -223,7 +223,7 @@ void MainWindow::on_Filtro8k_valueChanged(int value8k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value8k);
+    //dsp_->updatefiltro8k(value8k);
     this->repaint();
     ;
 }
@@ -233,7 +233,7 @@ void MainWindow::on_Filtro16k_valueChanged(int value16k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updateVolume(value16k);
+    //dsp_->updatefiltro16k(value16k);
     this->repaint();
     ;
 }

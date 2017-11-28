@@ -70,6 +70,17 @@ public:
 
   void updateVolume(int value);
 
+  void updatefiltro32(int value32);
+  void updatefiltro63(int value63);
+  void updatefiltro125(int value125);
+  void updatefiltro250(int value250);
+  void updatefiltro500(int value500);
+  void updatefiltro1k(int value1k);
+  void updatefiltro2k(int value2k);
+  void updatefiltro4k(int value4k);
+  void updatefiltro8k(int value8k);
+  void updatefiltro16k(int value16k);
+
 protected:
 
   /**
@@ -88,6 +99,16 @@ protected:
 
   int volumeGain_;
 
+  int g32;
+  int g64;
+  int g125;
+  int g250;
+  int g500;
+  int g1k;
+  int g2k;
+  int g4k;
+  int g8k;
+  int g16k;
 
   /**
    * control Volume

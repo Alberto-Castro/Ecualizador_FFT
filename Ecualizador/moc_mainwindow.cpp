@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[29];
-    char stringdata0[473];
+    char stringdata0[468];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,47 +33,47 @@ QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 25), // "on_fileEdit_returnPressed"
 QT_MOC_LITERAL(2, 37, 0), // ""
 QT_MOC_LITERAL(3, 38, 21), // "on_fileButton_clicked"
-QT_MOC_LITERAL(4, 60, 28), // "on_volumeSlider_valueChanged"
-QT_MOC_LITERAL(5, 89, 5), // "value"
-QT_MOC_LITERAL(6, 95, 6), // "update"
-QT_MOC_LITERAL(7, 102, 24), // "on_Filtro32_valueChanged"
-QT_MOC_LITERAL(8, 127, 7), // "value32"
-QT_MOC_LITERAL(9, 135, 24), // "on_Filtro63_valueChanged"
-QT_MOC_LITERAL(10, 160, 7), // "value63"
-QT_MOC_LITERAL(11, 168, 25), // "on_Filtro125_valueChanged"
-QT_MOC_LITERAL(12, 194, 8), // "value125"
-QT_MOC_LITERAL(13, 203, 25), // "on_Filtro250_valueChanged"
-QT_MOC_LITERAL(14, 229, 8), // "value250"
-QT_MOC_LITERAL(15, 238, 25), // "on_Filtro500_valueChanged"
-QT_MOC_LITERAL(16, 264, 8), // "value500"
-QT_MOC_LITERAL(17, 273, 24), // "on_Filtro1k_valueChanged"
-QT_MOC_LITERAL(18, 298, 7), // "value1k"
-QT_MOC_LITERAL(19, 306, 24), // "on_Filtro2k_valueChanged"
-QT_MOC_LITERAL(20, 331, 7), // "value2k"
-QT_MOC_LITERAL(21, 339, 24), // "on_Filtro4k_valueChanged"
-QT_MOC_LITERAL(22, 364, 7), // "value4k"
-QT_MOC_LITERAL(23, 372, 24), // "on_Filtro8k_valueChanged"
-QT_MOC_LITERAL(24, 397, 7), // "value8k"
-QT_MOC_LITERAL(25, 405, 25), // "on_Filtro16k_valueChanged"
-QT_MOC_LITERAL(26, 431, 8), // "value16k"
-QT_MOC_LITERAL(27, 440, 26), // "on_Predetermiado_activated"
-QT_MOC_LITERAL(28, 467, 5) // "index"
+QT_MOC_LITERAL(4, 60, 23), // "on_volumen_valueChanged"
+QT_MOC_LITERAL(5, 84, 5), // "value"
+QT_MOC_LITERAL(6, 90, 6), // "update"
+QT_MOC_LITERAL(7, 97, 24), // "on_Filtro32_valueChanged"
+QT_MOC_LITERAL(8, 122, 7), // "value32"
+QT_MOC_LITERAL(9, 130, 24), // "on_Filtro63_valueChanged"
+QT_MOC_LITERAL(10, 155, 7), // "value63"
+QT_MOC_LITERAL(11, 163, 25), // "on_Filtro125_valueChanged"
+QT_MOC_LITERAL(12, 189, 8), // "value125"
+QT_MOC_LITERAL(13, 198, 25), // "on_Filtro250_valueChanged"
+QT_MOC_LITERAL(14, 224, 8), // "value250"
+QT_MOC_LITERAL(15, 233, 25), // "on_Filtro500_valueChanged"
+QT_MOC_LITERAL(16, 259, 8), // "value500"
+QT_MOC_LITERAL(17, 268, 24), // "on_Filtro1k_valueChanged"
+QT_MOC_LITERAL(18, 293, 7), // "value1k"
+QT_MOC_LITERAL(19, 301, 24), // "on_Filtro2k_valueChanged"
+QT_MOC_LITERAL(20, 326, 7), // "value2k"
+QT_MOC_LITERAL(21, 334, 24), // "on_Filtro4k_valueChanged"
+QT_MOC_LITERAL(22, 359, 7), // "value4k"
+QT_MOC_LITERAL(23, 367, 24), // "on_Filtro8k_valueChanged"
+QT_MOC_LITERAL(24, 392, 7), // "value8k"
+QT_MOC_LITERAL(25, 400, 25), // "on_Filtro16k_valueChanged"
+QT_MOC_LITERAL(26, 426, 8), // "value16k"
+QT_MOC_LITERAL(27, 435, 26), // "on_Predetermiado_activated"
+QT_MOC_LITERAL(28, 462, 5) // "index"
 
     },
     "MainWindow\0on_fileEdit_returnPressed\0"
-    "\0on_fileButton_clicked\0"
-    "on_volumeSlider_valueChanged\0value\0"
-    "update\0on_Filtro32_valueChanged\0value32\0"
-    "on_Filtro63_valueChanged\0value63\0"
-    "on_Filtro125_valueChanged\0value125\0"
-    "on_Filtro250_valueChanged\0value250\0"
-    "on_Filtro500_valueChanged\0value500\0"
-    "on_Filtro1k_valueChanged\0value1k\0"
-    "on_Filtro2k_valueChanged\0value2k\0"
-    "on_Filtro4k_valueChanged\0value4k\0"
-    "on_Filtro8k_valueChanged\0value8k\0"
-    "on_Filtro16k_valueChanged\0value16k\0"
-    "on_Predetermiado_activated\0index"
+    "\0on_fileButton_clicked\0on_volumen_valueChanged\0"
+    "value\0update\0on_Filtro32_valueChanged\0"
+    "value32\0on_Filtro63_valueChanged\0"
+    "value63\0on_Filtro125_valueChanged\0"
+    "value125\0on_Filtro250_valueChanged\0"
+    "value250\0on_Filtro500_valueChanged\0"
+    "value500\0on_Filtro1k_valueChanged\0"
+    "value1k\0on_Filtro2k_valueChanged\0"
+    "value2k\0on_Filtro4k_valueChanged\0"
+    "value4k\0on_Filtro8k_valueChanged\0"
+    "value8k\0on_Filtro16k_valueChanged\0"
+    "value16k\0on_Predetermiado_activated\0"
+    "index"
 };
 #undef QT_MOC_LITERAL
 
@@ -135,7 +135,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->on_fileEdit_returnPressed(); break;
         case 1: _t->on_fileButton_clicked(); break;
-        case 2: _t->on_volumeSlider_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->on_volumen_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 3: _t->update(); break;
         case 4: _t->on_Filtro32_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 5: _t->on_Filtro63_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;

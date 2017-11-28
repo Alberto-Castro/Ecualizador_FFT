@@ -19,6 +19,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QSlider>
 #include <QtWidgets/QStatusBar>
@@ -68,6 +69,7 @@ public:
     QLabel *F16k;
     QComboBox *Predetermiado;
     QMenuBar *menuBar;
+    QMenu *menuEcualizador;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -313,6 +315,8 @@ public:
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
         menuBar->setGeometry(QRect(0, 0, 962, 19));
+        menuEcualizador = new QMenu(menuBar);
+        menuEcualizador->setObjectName(QStringLiteral("menuEcualizador"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -320,6 +324,8 @@ public:
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QStringLiteral("statusBar"));
         MainWindow->setStatusBar(statusBar);
+
+        menuBar->addAction(menuEcualizador->menuAction());
 
         retranslateUi(MainWindow);
 
@@ -354,6 +360,7 @@ public:
          << QApplication::translate("MainWindow", "Rock", 0)
          << QApplication::translate("MainWindow", "Techno", 0)
         );
+        menuEcualizador->setTitle(QApplication::translate("MainWindow", "Ecualizador", 0));
     } // retranslateUi
 
 };

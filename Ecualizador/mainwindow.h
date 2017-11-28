@@ -86,7 +86,7 @@ private:
    private slots:
      void on_fileEdit_returnPressed();
      void on_fileButton_clicked();
-     void on_volumeSlider_valueChanged(int value);
+     void on_volumen_valueChanged(int value);
 
 
      void update();
