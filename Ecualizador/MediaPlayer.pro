@@ -11,7 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = MediaPlayer
 TEMPLATE = app
 
-LIBS += -lfftw3f -ljack -lsndfile -lGL
+LIBS += -lfftw3 -ljack -lsndfile -lGL
 
 INCLUDEPATH += /usr/include
 

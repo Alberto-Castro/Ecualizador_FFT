@@ -57,6 +57,10 @@ void dspSystem::updateVolume(int value){
 
 }
 
+void dspSystem::updatefiltro32(int value32){
+   g32=value32;
+}
+
 /**
  * Initialization function for the current filter plan
  */
@@ -82,7 +86,7 @@ bool dspSystem::process(float* in,float* out) {
   float* tmpIn = in;
   float* tmpOut = out;
 
-  cv_->filter(bufferSize_,volumeGain_,tmpIn,tmpOut);
+  cv_->filter32(bufferSize_,volumeGain_,tmpIn,tmpOut);
 
   return true;
 }

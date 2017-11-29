@@ -143,7 +143,7 @@ void MainWindow::on_Filtro32_valueChanged(int value32)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro32(value32);
+    dsp_->updatefiltro32(value32);
     this->repaint();
     ;
 }

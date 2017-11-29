@@ -59,6 +59,11 @@ public:
                int volumeGain,
                float* in,
                float* out);
+
+   void filter32(int blockSize,
+                 int volumeGain,
+                 float* in,
+                 float *out);
 };
 
 

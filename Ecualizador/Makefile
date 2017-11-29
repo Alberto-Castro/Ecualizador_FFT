@@ -15,7 +15,7 @@ CXX           = g++
 DEFINES       = -DQT_QML_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
-INCPATH       = -I. -isystem /usr/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore -I. -I. -I/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++
+INCPATH       = -I. -isystem /usr/include -I../../Documentos/Qt/5.7/gcc_64/include -I../../Documentos/Qt/5.7/gcc_64/include/QtWidgets -I../../Documentos/Qt/5.7/gcc_64/include/QtGui -I../../Documentos/Qt/5.7/gcc_64/include/QtCore -I. -I. -I../../Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++
 QMAKE         = /home/beto/Documentos/Qt/5.7/gcc_64/bin/qmake
 DEL_FILE      = rm -f
 CHK_DIR_EXISTS= test -d
@@ -33,10 +33,10 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = MediaPlayer1.0.0
-DISTDIR = /home/beto/TEC/2_2017/DSP/Proyecto/MediaPlayer_v1/.tmp/MediaPlayer1.0.0
+DISTDIR = /home/beto/Ecualizador_FFT/Ecualizador/.tmp/MediaPlayer1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/beto/Documentos/Qt/5.7/gcc_64/lib
-LIBS          = $(SUBLIBS) -lfftw3f -ljack -lsndfile -L/home/beto/Documentos/Qt/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Core -lGL -lpthread 
+LIBS          = $(SUBLIBS) -lfftw3 -ljack -lsndfile -L/home/beto/Documentos/Qt/5.7/gcc_64/lib -lQt5Widgets -L/usr/lib64 -lQt5Gui -lQt5Core -lGL -lpthread 
 AR            = ar cqs
 RANLIB        = 
 SED           = sed
@@ -59,155 +59,155 @@ OBJECTS       = main.o \
 		dspsystem.o \
 		controlvolume.o \
 		moc_mainwindow.o
-DIST          = /home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+DIST          = ../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
 		.qmake.stash \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf \
 		MediaPlayer.pro mainwindow.h \
 		jack.h \
 		processor.h \
@@ -228,313 +228,313 @@ first: all
 $(TARGET): ui_mainwindow.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: MediaPlayer.pro /home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf /home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
+Makefile: MediaPlayer.pro ../../Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf ../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf \
 		.qmake.stash \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf \
-		/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf \
+		../../Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf \
 		MediaPlayer.pro \
-		/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Widgets.prl \
-		/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Gui.prl \
-		/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Core.prl
+		../../Documentos/Qt/5.7/gcc_64/lib/libQt5Widgets.prl \
+		../../Documentos/Qt/5.7/gcc_64/lib/libQt5Gui.prl \
+		../../Documentos/Qt/5.7/gcc_64/lib/libQt5Core.prl
 	$(QMAKE) -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug -o Makefile MediaPlayer.pro
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_pre.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/unix.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/linux.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/sanitize.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/gcc-base-unix.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-base.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/common/g++-unix.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/qconfig.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dcore_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dextras_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dinput_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dlogic_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquick_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickextras_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickinput_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3dquickrender_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_3drender_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_clucene_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_concurrent_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_core_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_dbus_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designer_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_eglfs_device_lib_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gamepad_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_gui_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_help_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_location_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimedia_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_network_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_nfc_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_opengl_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_packetprotocol_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_platformsupport_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_positioning_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_printsupport_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_purchasing_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qml_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldebug_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qmltest_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quick_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickcontrols2_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quicktemplates2_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_script_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scripttools_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_scxml_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sensors_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialbus_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_serialport_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_sql_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_svg_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_testlib_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uiplugin.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_uitools_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webchannel_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webengine_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecore_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginecoreheaders_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webenginewidgets_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_websockets_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_webview_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_widgets_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_x11extras_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xml_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_functions.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt_config.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++/qmake.conf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/spec_post.prf:
 .qmake.stash:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf:
-/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exclusive_builds.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_pre.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resolve_config.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/default_post.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qml_debug.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/warn_on.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/qt.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/resources.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/moc.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/opengl.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/uic.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/unix/thread.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/file_copies.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/testcase_targets.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/exceptions.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/yacc.prf:
+../../Documentos/Qt/5.7/gcc_64/mkspecs/features/lex.prf:
 MediaPlayer.pro:
-/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Widgets.prl:
-/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Gui.prl:
-/home/beto/Documentos/Qt/5.7/gcc_64/lib/libQt5Core.prl:
+../../Documentos/Qt/5.7/gcc_64/lib/libQt5Widgets.prl:
+../../Documentos/Qt/5.7/gcc_64/lib/libQt5Gui.prl:
+../../Documentos/Qt/5.7/gcc_64/lib/libQt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -spec linux-g++ CONFIG+=debug CONFIG+=qml_debug -o Makefile MediaPlayer.pro
 
@@ -580,120 +580,120 @@ compiler_rcc_clean:
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
-moc_mainwindow.cpp: /home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+moc_mainwindow.cpp: ../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		dspsystem.h \
 		processor.h \
 		controlvolume.h \
 		mainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/bin/moc
-	/home/beto/Documentos/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/beto/TEC/2_2017/DSP/Proyecto/MediaPlayer_v1 -I/usr/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
+		../../Documentos/Qt/5.7/gcc_64/bin/moc
+	/home/beto/Documentos/Qt/5.7/gcc_64/bin/moc $(DEFINES) -I/home/beto/Documentos/Qt/5.7/gcc_64/mkspecs/linux-g++ -I/home/beto/Ecualizador_FFT/Ecualizador -I/usr/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui -I/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore -I/usr/include/c++/6 -I/usr/include/x86_64-linux-gnu/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/x86_64-linux-gnu/6/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include mainwindow.h -o moc_mainwindow.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -701,7 +701,7 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: mainwindow.ui \
-		/home/beto/Documentos/Qt/5.7/gcc_64/bin/uic
+		../../Documentos/Qt/5.7/gcc_64/bin/uic
 	/home/beto/Documentos/Qt/5.7/gcc_64/bin/uic mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -715,405 +715,408 @@ compiler_clean: compiler_moc_header_clean compiler_uic_clean
 ####### Compile
 
 main.o: main.cpp mainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		dspsystem.h \
 		processor.h \
 		controlvolume.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMainWindow \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmainwindow.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qicon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QTimer \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasictimer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QFileDialog \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdir.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfileinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
 		dspsystem.h \
 		processor.h \
 		controlvolume.h \
 		ui_mainwindow.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QVariant \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QAction \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QLabel \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpen.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMenuBar \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmenubar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmenu.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QSlider \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QStatusBar \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstatusbar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QToolBar \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QToolButton \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtoolbutton.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QWidget \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QVariant \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QAction \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qaction.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QApplication \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qeventloop.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qguiapplication.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qinputmethod.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QButtonGroup \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qbuttongroup.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QComboBox \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qcombobox.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemdelegate.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstyleoption.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractspinbox.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qvalidator.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qregularexpression.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qslider.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractslider.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstyle.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtabbar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qrubberband.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qframe.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qabstractitemmodel.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlayout.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QHeaderView \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qheaderview.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractitemview.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qitemselectionmodel.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QLabel \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlabel.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QLineEdit \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qlineedit.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtextcursor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtextformat.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpen.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtextoption.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMenu \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmenu.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMenuBar \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmenubar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QSlider \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QStatusBar \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QToolBar \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtoolbar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QToolButton \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qtoolbutton.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QWidget \
 		jack.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QThread \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qthread.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QMutex
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QThread \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qthread.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QMutex
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
 jack.o: jack.cpp jack.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QThread \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qthread.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/QMutex \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QThread \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qthread.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnamespace.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobal.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qconfig.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfeatures.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtypetraits.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qisenum.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsysinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlogging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qflags.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmutex.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qnumeric.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qversiontagging.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstring.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qchar.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrefcount.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qarraydata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qalgorithms.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiterator.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpair.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringlist.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qregexp.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcoreevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmetatype.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qobject_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/QMutex \
 		processor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
-		/home/beto/Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/QMessageBox \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qmessagebox.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qdialog.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qwidget.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmargins.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpaintdevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qrect.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsize.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qpoint.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpalette.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcolor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgb.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qrgba64.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qbrush.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvector.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qmatrix.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpolygon.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qregion.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdatastream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qiodevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qline.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtransform.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpainterpath.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qimage.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixelformat.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qpixmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qshareddata.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qhash.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfont.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontmetrics.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qfontinfo.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qcursor.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qkeysequence.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qevent.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qvariant.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qmap.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qdebug.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qtextstream.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qlocale.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qset.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurl.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qurlquery.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfile.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtCore/qfiledevice.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qvector2d.h \
+		../../Documentos/Qt/5.7/gcc_64/include/QtGui/qtouchdevice.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o jack.o jack.cpp
 
 dspsystem.o: dspsystem.cpp dspsystem.h \

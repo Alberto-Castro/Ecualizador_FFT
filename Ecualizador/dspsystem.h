@@ -51,7 +51,7 @@ public:
   /**
    * Processing function
    */
-  virtual bool process(float* in,float* out);
+  virtual bool process(float* in, float *out);
 
   /**
    * Shutdown the processor
