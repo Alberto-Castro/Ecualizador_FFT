@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[29];
-    char stringdata0[468];
+    char stringdata0[469];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,8 +56,8 @@ QT_MOC_LITERAL(23, 367, 24), // "on_Filtro8k_valueChanged"
 QT_MOC_LITERAL(24, 392, 7), // "value8k"
 QT_MOC_LITERAL(25, 400, 25), // "on_Filtro16k_valueChanged"
 QT_MOC_LITERAL(26, 426, 8), // "value16k"
-QT_MOC_LITERAL(27, 435, 26), // "on_Predetermiado_activated"
-QT_MOC_LITERAL(28, 462, 5) // "index"
+QT_MOC_LITERAL(27, 435, 27), // "on_Predeterminado_activated"
+QT_MOC_LITERAL(28, 463, 5) // "index"
 
     },
     "MainWindow\0on_fileEdit_returnPressed\0"
@@ -72,7 +72,7 @@ QT_MOC_LITERAL(28, 462, 5) // "index"
     "value2k\0on_Filtro4k_valueChanged\0"
     "value4k\0on_Filtro8k_valueChanged\0"
     "value8k\0on_Filtro16k_valueChanged\0"
-    "value16k\0on_Predetermiado_activated\0"
+    "value16k\0on_Predeterminado_activated\0"
     "index"
 };
 #undef QT_MOC_LITERAL
@@ -147,7 +147,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 11: _t->on_Filtro4k_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 12: _t->on_Filtro8k_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 13: _t->on_Filtro16k_valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->on_Predetermiado_activated((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->on_Predeterminado_activated((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     }

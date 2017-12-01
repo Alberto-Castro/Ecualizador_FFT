@@ -61,6 +61,25 @@ void dspSystem::updatefiltro32(int value32){
    g32=value32;
 }
 
+void dspSystem::updatefiltro16k(int value16k){
+   g16k=value16k;
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////
+
+void dspSystem::updateinicio(bool saber){
+
+    iniciorep=saber;
+
+    _debug("cambio el inicio de la cancion" << std::endl);
+}
+
+///////////////////////////////////////////////////////////////////
+
+
 /**
  * Initialization function for the current filter plan
  */
@@ -70,6 +89,7 @@ bool dspSystem::init(const int sampleRate,const int bufferSize) {
   sampleRate_ = sampleRate;
   bufferSize_ = bufferSize;
   volumeGain_ = 0;
+  iniciorep=false;
   g32 = 0;
   g64 = 0;
   g125 = 0;
@@ -97,8 +117,15 @@ bool dspSystem::process(float* in,float* out) {
   float* tmpOut = out;
 
   //cv_->filter(bufferSize_,volumeGain_,tmpIn,tmpOut);
-  cv_->filter32(bufferSize_,g32,tmpIn,tmpOut);
+  //cv_->filter32(bufferSize_,g32,tmpIn,tmpOut,iniciorep);
+  if (iniciorep){
+    cv_->BancoFiltros(bufferSize_,volumeGain_,g32,g64,g125,g250,g500,g1k,g2k,g4k,g8k,g16k,iniciorep,tmpIn,tmpOut);
+    iniciorep=false;
+  }
+  else{
+      cv_->BancoFiltros(bufferSize_,volumeGain_,g32,g64,g125,g250,g500,g1k,g2k,g4k,g8k,g16k,iniciorep,tmpIn,tmpOut);
 
+  }
   return true;
 }
 

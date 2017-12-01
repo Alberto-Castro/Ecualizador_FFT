@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>962</width>
-    <height>542</height>
+    <width>947</width>
+    <height>569</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -102,8 +102,8 @@ color: rgb(42, 99, 255);</string>
    <widget class="QWidget" name="horizontalLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>60</y>
+      <x>60</x>
+      <y>230</y>
       <width>751</width>
       <height>221</height>
      </rect>
@@ -274,8 +274,8 @@ color: rgb(42, 99, 255);</string>
    <widget class="QWidget" name="horizontalLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>280</y>
+      <x>90</x>
+      <y>450</y>
       <width>711</width>
       <height>31</height>
      </rect>
@@ -393,7 +393,7 @@ font: 10pt &quot;Latin Modern Mono Prop&quot;;</string>
      </item>
     </layout>
    </widget>
-   <widget class="QComboBox" name="Predetermiado">
+   <widget class="QComboBox" name="Predeterminado">
     <property name="geometry">
      <rect>
       <x>830</x>
@@ -463,7 +463,7 @@ font: 45 9pt &quot;URW Gothic L&quot;;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>962</width>
+     <width>947</width>
      <height>19</height>
     </rect>
    </property>

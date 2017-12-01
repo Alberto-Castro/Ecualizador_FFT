@@ -82,6 +82,20 @@ private:
       *DSP change
       */
      bool dspChanged_;
+     bool iniciorep;
+     int value1;
+     int value2;
+     int value3;
+     int value4;
+     int value5;
+     int value6;
+     int value7;
+     int value8;
+     int value9;
+     int value10;
+
+protected:
+     void paintEvent(QPaintEvent *e);
      
    private slots:
      void on_fileEdit_returnPressed();
@@ -101,7 +115,7 @@ private:
      void on_Filtro4k_valueChanged(int value4k);
      void on_Filtro8k_valueChanged(int value8k);
      void on_Filtro16k_valueChanged(int value16k);
-     void on_Predetermiado_activated(int index);
+     void on_Predeterminado_activated(int index);
 };
 
 

@@ -80,6 +80,7 @@ public:
   void updatefiltro4k(int value4k);
   void updatefiltro8k(int value8k);
   void updatefiltro16k(int value16k);
+  virtual void updateinicio(bool saber);
 
 protected:
 
@@ -98,7 +99,7 @@ protected:
    */
 
   int volumeGain_;
-
+  bool iniciorep;
   int g32;
   int g64;
   int g125;
@@ -109,7 +110,6 @@ protected:
   int g4k;
   int g8k;
   int g16k;
-
   /**
    * control Volume
    */

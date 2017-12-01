@@ -67,7 +67,7 @@ public:
     QLabel *F4k;
     QLabel *F8k;
     QLabel *F16k;
-    QComboBox *Predetermiado;
+    QComboBox *Predeterminado;
     QMenuBar *menuBar;
     QMenu *menuEcualizador;
     QToolBar *mainToolBar;
@@ -77,7 +77,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(962, 542);
+        MainWindow->resize(947, 569);
         MainWindow->setStyleSheet(QStringLiteral("background-color: rgb(146, 149, 166);"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
@@ -132,7 +132,7 @@ public:
 "color: rgb(42, 99, 255);"));
         horizontalLayoutWidget_2 = new QWidget(centralWidget);
         horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(70, 60, 751, 221));
+        horizontalLayoutWidget_2->setGeometry(QRect(60, 230, 751, 221));
         Filtros = new QHBoxLayout(horizontalLayoutWidget_2);
         Filtros->setSpacing(6);
         Filtros->setContentsMargins(11, 11, 11, 11);
@@ -230,7 +230,7 @@ public:
 
         horizontalLayoutWidget_3 = new QWidget(centralWidget);
         horizontalLayoutWidget_3->setObjectName(QStringLiteral("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(100, 280, 711, 31));
+        horizontalLayoutWidget_3->setGeometry(QRect(90, 450, 711, 31));
         Nombrefiltros = new QHBoxLayout(horizontalLayoutWidget_3);
         Nombrefiltros->setSpacing(6);
         Nombrefiltros->setContentsMargins(11, 11, 11, 11);
@@ -306,15 +306,15 @@ public:
 
         Nombrefiltros->addWidget(F16k);
 
-        Predetermiado = new QComboBox(centralWidget);
-        Predetermiado->setObjectName(QStringLiteral("Predetermiado"));
-        Predetermiado->setGeometry(QRect(830, 70, 81, 22));
-        Predetermiado->setStyleSheet(QLatin1String("background-color: rgb(42, 99, 255);\n"
+        Predeterminado = new QComboBox(centralWidget);
+        Predeterminado->setObjectName(QStringLiteral("Predeterminado"));
+        Predeterminado->setGeometry(QRect(830, 70, 81, 22));
+        Predeterminado->setStyleSheet(QLatin1String("background-color: rgb(42, 99, 255);\n"
 "font: 45 9pt \"URW Gothic L\";"));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 962, 19));
+        menuBar->setGeometry(QRect(0, 0, 947, 19));
         menuEcualizador = new QMenu(menuBar);
         menuEcualizador->setObjectName(QStringLiteral("menuEcualizador"));
         MainWindow->setMenuBar(menuBar);
@@ -347,8 +347,8 @@ public:
         F4k->setText(QApplication::translate("MainWindow", "4 kHz", 0));
         F8k->setText(QApplication::translate("MainWindow", "8 kHz", 0));
         F16k->setText(QApplication::translate("MainWindow", "16 kHz", 0));
-        Predetermiado->clear();
-        Predetermiado->insertItems(0, QStringList()
+        Predeterminado->clear();
+        Predeterminado->insertItems(0, QStringList()
          << QApplication::translate("MainWindow", "None", 0)
          << QApplication::translate("MainWindow", "Classical", 0)
          << QApplication::translate("MainWindow", "Club", 0)

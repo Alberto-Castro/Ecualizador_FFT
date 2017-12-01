@@ -28,9 +28,14 @@
 #include "controlvolume.h"
 #include <cmath>
 #include <fftw3.h>
+#include <math.h>
+
 
 #include <iostream>
 #include <fstream>
+
+#define REAL 0
+#define IMAG 1
 
 /*
  * Constructor
@@ -55,12 +60,161 @@ controlVolume::~controlVolume(){
  */
 
 void controlVolume::filter(int blockSize, int volumeGain, float *in, float *out){
-    for (int n=0; n<blockSize;++n){
-        out[n]=(volumeGain)*in[n]*0.02;
+    /*for (int n=0; n<blockSize;++n){
+        out[n]=in[n]*volumeGain*0.02;
+    }*/
+    int N = blockSize;
+    fftw_complex *x;
+    x = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * N); // Se definie el tamano del puntero de salida
+
+    double *in2;
+    double *out2;
+    out2 = (double *) malloc(N*sizeof(double));
+    in2 = (double *) malloc(N*sizeof(double));
+
+    for (int n=0; n<N;++n){
+        in2[n]=(volumeGain)*in[n]*0.02;
     }
+
+    fftw_plan dft = fftw_plan_dft_r2c_1d(N,in2,x,FFTW_ESTIMATE);
+    fftw_plan idft = fftw_plan_dft_c2r_1d(N,x,out2,FFTW_ESTIMATE);
+
+    fftw_execute(dft);
+    fftw_execute(idft);
+
+    for (int n=0; n<N;++n){
+        out[n]=(out2[n]/N);
+    }
+
+    fftw_destroy_plan(dft);
+    fftw_destroy_plan(idft);
+    fftw_free(x);
+    //delete out2;
+    //delete in2;
+    out2=NULL;
+    in2=NULL;
 }
 
-void controlVolume::filter32(int blockSize, int g32, float *in, float *out){
+void controlVolume::filter16k(int blockSize, int g16k, float *in, float *out, bool inicial){
+    int M=20;
+    int L=blockSize;
+    int N=L+M-1;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    double *h16k = new double[N];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    double s1=0.54115569484630355;
+    double s2=0.54115569484630355;
+    double a21=-1.9929062330338988;
+    double b21=-1.9995547795128696;
+    double a31=0.99295230173619742;
+    double a22=-0.0072420371320655319;
+    double b22=-1.9999999947970359;
+    double a32=0.31569379867829822;
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    h16k[0]=(s1*s2);
+    h16k[1]=((s1*s2)*(b22+b21))-h16k[0]*(a21+a22);
+    h16k[2]=((s1*s2)*(b21*b22+2))-h16k[1]*(a21+a22)-h16k[0]*(a32+a21*a22+a31);
+    h16k[3]=((s1*s2)*(b22+b21))-h16k[2]*(a21+a22)-h16k[1]*(a32+a21*a22+a31)-h16k[0]*(a32*a21+a22*a31);
+    h16k[4]=(s1*s2)-h16k[3]*(-a21-a22)+h16k[2]*(-a32-a21*a22-a31)+h16k[1]*(-a32*a21-a22*a31)+h16k[0]*(-a32*a31);
+    for (int n=5; n<M-1;++n){
+        h16k[n]=-h16k[n-1]*(-a21-a22)+h16k[n-2]*(-a32-a21*a22-a31)+h16k[n-3]*(-a32*a21-a22*a31)+h16k[n-4]*(-a32*a31);
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    fftw_complex *x;
+    fftw_complex *w;
+    fftw_complex *y;
+    x = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * N); // Se define el tamano del puntero de salida
+    w = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * N);
+    y = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * N);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    double *in2 = new double[N];
+    double *out2 = new double[N];
+    double *aux2 = new double[L];
+    double *h = new double[N];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (int n=0;n<M-1;++n){
+        h[n]=0;
+    }
+
+    for (int n=M-1; n<N;++n){
+        h[n]=h16k[n];
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    if (inicial){
+        for (int n=0;n<M-1;++n){
+            in2[n]=0;
+        }
+    }
+    else{
+        for (int n=0;n<M-1;++n){
+            in2[n]=val_ant16k[n];
+        }
+    }
+
+    for (int n=M-1; n<N;++n){
+        in2[n]=in[n];
+    }
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (int n=0;n<M-1;++n){
+        val_ant16k[n]=in[n+(L-M+1)];
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    fftw_plan Xdft = fftw_plan_dft_r2c_1d(N,in2,x,FFTW_ESTIMATE);
+    fftw_plan Wdft = fftw_plan_dft_r2c_1d(N,h,w,FFTW_ESTIMATE);
+
+    fftw_execute(Xdft);
+    fftw_execute(Wdft);
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (int k=0; k<(N);++k){
+        y[k][REAL] = ((x[k][REAL])*(w[k][REAL])-(x[k][IMAG])*(w[k][IMAG]));
+        y[k][IMAG] = ((x[k][IMAG])*(w[k][REAL])+(x[k][REAL])*(w[k][IMAG]));
+    }
+
+    fftw_plan idft = fftw_plan_dft_c2r_1d(N,y,out2,FFTW_ESTIMATE);
+    fftw_execute(idft);
+    fftw_destroy_plan(Xdft);
+    fftw_destroy_plan(Wdft);
+    fftw_free(w);
+    fftw_free(x);
+    free(h16k);
+    free(h);
+    free(in2);
+    //delete x;
+    //delete w;
+    //delete h16k;
+    //delete h;
+    //delete in2;
+    x=NULL;
+    w=NULL;
+    h16k=NULL;
+    h=NULL;
+    in2=NULL;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (int n=0; n<L;++n){
+        aux2[n]=out2[n+M-1];
+    }
+
+    for (int n=0; n<L;++n){
+        out[n]=((aux2[n]/N)*g16k*0.02);
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    fftw_destroy_plan(idft);
+    fftw_free(y);
+    //delete y;
+    y=NULL;
+    free(out2);
+    free(aux2);
+    //delete out2;
+    //delete aux2;
+    out2=NULL;
+    aux2=NULL;
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+void controlVolume::filter32(int blockSize, int g32, float *in, float *out, bool inicial){
     int N = blockSize;
     fftw_complex *x;
     x = (fftw_complex *)fftw_malloc(sizeof(fftw_complex) * N); // Se definie el tamano del puntero de salida
@@ -81,12 +235,30 @@ void controlVolume::filter32(int blockSize, int g32, float *in, float *out){
     fftw_execute(idft);
 
     for (int n=0; n<N;++n){
-        out[n]=(out2[n]/1024);
+        out[n]=(out2[n]/N);
     }
 
     fftw_destroy_plan(dft);
     fftw_destroy_plan(idft);
     fftw_free(x);
-    free(out2);
-    free(in2);
+    //delete out2;
+    //delete in2;
+    out2=NULL;
+    in2=NULL;
+}
+
+void controlVolume::BancoFiltros(int blockSize, int volumeGain, int g32, int g64, int g125, int g250, int g500, int g1k, int g2k, int g4k, int g8k, int g16k, bool inicial, float *in, float *out){
+    float *tmp16k=new float[blockSize];
+    float *tmp32=new float[blockSize];
+
+    filter32(blockSize,g32,in,tmp32,inicial);
+    filter16k(blockSize,g16k,in,tmp16k,inicial);
+
+    for(int n=0;n<blockSize;++n){
+        out[n]=(0.02)*(volumeGain)*(tmp16k[n]+tmp32[n]);//+tmp2[n]+tmp3[n]+tmp4[n]+tmp5[n]+tmp6[n]+tmp7[n]+tmp9[n]+tmp8[n]);
+
+    }
+
+    delete tmp16k;
+    delete tmp32;
 }

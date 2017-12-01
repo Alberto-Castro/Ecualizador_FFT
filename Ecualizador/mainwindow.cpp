@@ -30,6 +30,7 @@
 #include "ui_mainwindow.h"
 #include "jack.h"
 #include <string>
+#include <qpainter.h>
 
 
 #undef _DSP_DEBUG
@@ -53,7 +54,18 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
     verbose_(false),
-    dspChanged_(true)
+    dspChanged_(true),
+    iniciorep(true),
+    value1(25),
+    value2(25),
+    value3(25),
+    value4(25),
+    value5(25),
+    value6(25),
+    value7(25),
+    value8(25),
+    value9(25),
+    value10(25)
 {
     ui->setupUi(this);
     /*
@@ -63,7 +75,7 @@ MainWindow::MainWindow(QWidget *parent) :
      */
     timer_ = new QTimer(this);
     connect(timer_, SIGNAL(timeout()), this, SLOT(update()));
-    timer_->start(250);
+    timer_->start(25);
 
     dsp_ = new dspSystem;
     jack::init(dsp_);
@@ -124,6 +136,9 @@ void MainWindow::on_fileButton_clicked() {
     jack::stopFiles();
     QStringList::iterator it;
     for (it=selectedFiles_.begin();it!=selectedFiles_.end();++it) {
+
+        dsp_->updateinicio(iniciorep);
+
       std::string tmp(qPrintable(*it));
       jack::playAlso(tmp.c_str());
     }
@@ -144,6 +159,7 @@ void MainWindow::on_Filtro32_valueChanged(int value32)
         dspChanged_=true;
     }
     dsp_->updatefiltro32(value32);
+    MainWindow::value1=value32;
     this->repaint();
     ;
 }
@@ -154,6 +170,7 @@ void MainWindow::on_Filtro63_valueChanged(int value63)
         dspChanged_=true;
     }
     //dsp_->updatefiltro63(value63);
+    MainWindow::value2=value63;
     this->repaint();
     ;
 }
@@ -164,6 +181,7 @@ void MainWindow::on_Filtro125_valueChanged(int value125)
         dspChanged_=true;
     }
     //dsp_->updatefiltro125(value125);
+    MainWindow::value3=value125;
     this->repaint();
     ;
 }
@@ -174,6 +192,7 @@ void MainWindow::on_Filtro250_valueChanged(int value250)
         dspChanged_=true;
     }
     //dsp_->updatefiltro250(value250);
+    MainWindow::value4=value250;
     this->repaint();
     ;
 }
@@ -184,6 +203,7 @@ void MainWindow::on_Filtro500_valueChanged(int value500)
         dspChanged_=true;
     }
     //dsp_->updatefiltro500(value500);
+    MainWindow::value5=value500;
     this->repaint();
     ;
 }
@@ -194,6 +214,7 @@ void MainWindow::on_Filtro1k_valueChanged(int value1k)
         dspChanged_=true;
     }
     //dsp_->updatefiltro1k(value1k);
+    MainWindow::value6=value1k;
     this->repaint();
     ;
 }
@@ -204,6 +225,7 @@ void MainWindow::on_Filtro2k_valueChanged(int value2k)
         dspChanged_=true;
     }
     //dsp_->updatefiltro2k(value2k);
+    MainWindow::value7=value2k;
     this->repaint();
     ;
 }
@@ -214,6 +236,7 @@ void MainWindow::on_Filtro4k_valueChanged(int value4k)
         dspChanged_=true;
     }
     //dsp_->updatefiltro4k(value4k);
+    MainWindow::value8=value4k;
     this->repaint();
     ;
 }
@@ -224,6 +247,7 @@ void MainWindow::on_Filtro8k_valueChanged(int value8k)
         dspChanged_=true;
     }
     //dsp_->updatefiltro8k(value8k);
+    MainWindow::value9=value8k;
     this->repaint();
     ;
 }
@@ -233,12 +257,13 @@ void MainWindow::on_Filtro16k_valueChanged(int value16k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro16k(value16k);
+    dsp_->updatefiltro16k(value16k);
+    MainWindow::value10=value16k;
     this->repaint();
     ;
 }
 
-void MainWindow::on_Predetermiado_activated(int index)
+void MainWindow::on_Predeterminado_activated(int index)
 {
     int Eq_preset = index;
 
@@ -505,4 +530,127 @@ void MainWindow::on_Predetermiado_activated(int index)
         ui->Filtro8k->setValue(value9);
         ui->Filtro16k->setValue(value10);
     }
+}
+
+
+void MainWindow::paintEvent(QPaintEvent *e)//funcion encargada de graficar el nivel de ganancia
+{
+    QPoint begin,Ctrl0,Ctrl1,Ctrl2,Ctrl3,Ctrl4,Ctrl5,Ctrl6,Ctrl7,Ctrl8,Ctrl9;//QPoint es una clase que define un par ordenado
+    QPoint end0,end1,end2,end3,end4,end5,end6,end7,end8,end9;
+    int Posy = 150; // posicion en y del total de la grafica, en otras palabras desplaza la grafia de arriba y abajo
+    int ofsetYC = 275; // desplaza las maximos y minimos de la funcion sinuseidal
+    int ofsetX = 150; // posicion en x del total de la grafica, en otras palabras desplaza la grafia de derecha a izquierda
+    int scale = -5;  // escala las maximos y minimos de la funcion sinuseidal
+
+    //coordenadas en la ventana para colocar la grafica
+    begin.setX(-5+ofsetX);
+    begin.setY(Posy);
+
+    Ctrl0.setX(30+ofsetX);
+    Ctrl0.setY(value1*scale + ofsetYC);
+    end0.setX(65+ofsetX);
+    end0.setY(Posy);
+
+    Ctrl1.setX(100+ofsetX);
+    Ctrl1.setY(value2*scale + ofsetYC);
+    end1.setX(135+ofsetX);
+    end1.setY(Posy);
+
+    Ctrl2.setX(170+ofsetX);
+    Ctrl2.setY(value3*scale + ofsetYC);
+    end2.setX(205+ofsetX);
+    end2.setY(Posy);
+
+    Ctrl3.setX(240+ofsetX);
+    Ctrl3.setY(value4*scale + ofsetYC);
+    end3.setX(275+ofsetX);
+    end3.setY(Posy);
+
+    Ctrl4.setX(310+ofsetX);
+    Ctrl4.setY(value5*scale + ofsetYC);
+    end4.setX(345+ofsetX);
+    end4.setY(Posy);
+
+    Ctrl5.setX(380+ofsetX);
+    Ctrl5.setY(value6*scale + ofsetYC);
+    end5.setX(415+ofsetX);
+    end5.setY(Posy);
+
+    Ctrl6.setX(450+ofsetX);
+    Ctrl6.setY(value7*scale + ofsetYC);
+    end6.setX(485+ofsetX);
+    end6.setY(Posy);
+
+    Ctrl7.setX(520+ofsetX);
+    Ctrl7.setY(value8*scale + ofsetYC);
+    end7.setX(555+ofsetX);
+    end7.setY(Posy);
+
+    Ctrl8.setX(590+ofsetX);
+    Ctrl8.setY(value9*scale + ofsetYC);
+    end8.setX(625+ofsetX);
+    end8.setY(Posy);
+
+    Ctrl9.setX(660+ofsetX);
+    Ctrl9.setY(value10*scale + ofsetYC);
+    end9.setX(695+ofsetX);
+    end9.setY(Posy);
+
+
+
+    // se declara la clase QPainterPath encargada de generar curvas entre otras figuras
+    QPainterPath myPath,myPath1,myPath2,myPath3,myPath4,myPath5,myPath6,myPath7,myPath8,myPath9;
+    myPath.moveTo(begin);//mueve el punto de inicio de la grafica
+    myPath.quadTo(Ctrl0,end0); // quadTo es el metodo encargado de generar una curva sinuseidal, Ctrl mueve la cresta y end determina el punto final
+
+    myPath1.moveTo(end0);
+    myPath1.quadTo(Ctrl1,end1);
+
+    myPath2.moveTo(end1);
+    myPath2.quadTo(Ctrl2,end2);
+
+    myPath3.moveTo(end2);
+    myPath3.quadTo(Ctrl3,end3);
+
+    myPath4.moveTo(end3);
+    myPath4.quadTo(Ctrl4,end4);
+
+    myPath5.moveTo(end4);
+    myPath5.quadTo(Ctrl5,end5);
+
+    myPath6.moveTo(end5);
+    myPath6.quadTo(Ctrl6,end6);
+
+    myPath7.moveTo(end6);
+    myPath7.quadTo(Ctrl7,end7);
+
+    myPath8.moveTo(end7);
+    myPath8.quadTo(Ctrl8,end8);
+
+    myPath9.moveTo(end8);
+    myPath9.quadTo(Ctrl9,end9);
+
+    QLinearGradient myGradient; //genera un sombreado debajo de la grafica
+    myGradient.setColorAt(0,QColor(57, 110, 141,200)); //le da el color deseado en formato RGB
+
+    QPen myPen; // tipo de lines
+    myPen.setColor(QColor(57, 110, 141));//color
+    myPen.setWidth(2); // grueso
+
+
+    QPainter painter(this); // Clase para pintar lo descrito anteriormente
+    painter.setBrush(myGradient);
+    painter.setPen(myPen);
+
+    painter.drawPath(myPath);
+    painter.drawPath(myPath1);
+    painter.drawPath(myPath2);
+    painter.drawPath(myPath3);
+    painter.drawPath(myPath4);
+    painter.drawPath(myPath5);
+    painter.drawPath(myPath6);
+    painter.drawPath(myPath7);
+    painter.drawPath(myPath8);
+    painter.drawPath(myPath9);
+
 }

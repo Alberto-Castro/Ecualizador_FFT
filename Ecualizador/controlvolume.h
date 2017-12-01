@@ -55,15 +55,31 @@ public:
    /**
     * Filter the in buffer and leave the result in out
     */
+
+   float val_ant16k[19];
+
+   void BancoFiltros(int blockSize,
+                     int volumeGain,int g32,int g64,int g125,int g250,int g500,int g1k,int g2k,int g4k,int g8k,int g16k,bool inicial,
+                     float *in,
+                     float *out);
+
    void filter(int blockSize,
                int volumeGain,
                float* in,
                float* out);
 
    void filter32(int blockSize,
-                 int volumeGain,
+                 int g32,
                  float* in,
-                 float *out);
+                 float *out,
+                 bool inicial);
+
+   void filter16k(int blockSize,
+                  int g16k,
+                  float* in,
+                  float *out,
+                  bool inicial);
+
 };
 
 
