@@ -90,16 +90,16 @@ bool dspSystem::init(const int sampleRate,const int bufferSize) {
   bufferSize_ = bufferSize;
   volumeGain_ = 0;
   iniciorep=false;
-  g32 = 0;
-  g64 = 0;
-  g125 = 0;
-  g250 = 0;
-  g500 = 0;
-  g1k = 0;
-  g2k = 0;
-  g4k = 0;
-  g8k = 0;
-  g16k = 0;
+  g32 = 25;
+  g64 = 25;
+  g125 = 25;
+  g250 = 25;
+  g500 = 25;
+  g1k = 25;
+  g2k = 25;
+  g4k = 25;
+  g8k = 25;
+  g16k = 25;
 
   delete cv_;
   cv_=new controlVolume();
