@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>947</width>
+    <height>569</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(146, 149, 166);</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>901</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout" stretch="0">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>3</number>
+       </property>
+       <item>
+        <widget class="QLineEdit" name="fileEdit">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(255, 255, 255);
+gridline-color: rgb(42, 99, 255);</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="fileButton">
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(42, 99, 255);</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>41</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="Volumen">
+     <item>
+      <widget class="QSlider" name="volumen">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="volume">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>450</y>
+      <width>67</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+    </property>
+    <property name="text">
+     <string>Volume</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>230</y>
+      <width>751</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="Filtros">
+     <item>
+      <widget class="QSlider" name="Filtro32">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro63">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro125">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro250">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro500">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro1k">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro2k">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro4k">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro8k">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QSlider" name="Filtro16k">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksBothSides</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>450</y>
+      <width>711</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="Nombrefiltros">
+     <item>
+      <widget class="QLabel" name="F32">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>32 Hz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F63">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>63 Hz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F125">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>125 Hz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F250">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>250 Hz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F500">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>500 Hz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F1k">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>1 kHz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F2k">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>2kHz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F4k">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>4 kHz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F8k">
+       <property name="styleSheet">
+        <string notr="true">font: 10pt &quot;Latin Modern Mono Prop&quot;;
+color: rgb(42, 99, 255);</string>
+       </property>
+       <property name="text">
+        <string>8 kHz</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="F16k">
+       <property name="styleSheet">
+        <string notr="true">color: rgb(42, 99, 255);
+font: 10pt &quot;Latin Modern Mono Prop&quot;;</string>
+       </property>
+       <property name="text">
+        <string>16 kHz</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QComboBox" name="Predeterminado">
+    <property name="geometry">
+     <rect>
+      <x>830</x>
+      <y>70</y>
+      <width>81</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(42, 99, 255);
+font: 45 9pt &quot;URW Gothic L&quot;;</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>None</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Classical</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Club</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dance</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Full Bass &amp; Trebble</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Full Trebble</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pop</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Reggae</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Rock</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Techno</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>947</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuEcualizador">
+    <property name="title">
+     <string>Ecualizador</string>
+    </property>
+   </widget>
+   <addaction name="menuEcualizador"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
