@@ -169,7 +169,7 @@ void MainWindow::on_Filtro63_valueChanged(int value63)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro63(value63);
+    dsp_->updatefiltro63(value63);
     MainWindow::value2=value63;
     this->repaint();
     ;
@@ -180,7 +180,7 @@ void MainWindow::on_Filtro125_valueChanged(int value125)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro125(value125);
+    dsp_->updatefiltro125(value125);
     MainWindow::value3=value125;
     this->repaint();
     ;
@@ -191,7 +191,7 @@ void MainWindow::on_Filtro250_valueChanged(int value250)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro250(value250);
+    dsp_->updatefiltro250(value250);
     MainWindow::value4=value250;
     this->repaint();
     ;
@@ -202,7 +202,7 @@ void MainWindow::on_Filtro500_valueChanged(int value500)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro500(value500);
+    dsp_->updatefiltro500(value500);
     MainWindow::value5=value500;
     this->repaint();
     ;
@@ -213,7 +213,7 @@ void MainWindow::on_Filtro1k_valueChanged(int value1k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro1k(value1k);
+    dsp_->updatefiltro1k(value1k);
     MainWindow::value6=value1k;
     this->repaint();
     ;
@@ -224,7 +224,7 @@ void MainWindow::on_Filtro2k_valueChanged(int value2k)
     if (!dspChanged_){
         dspChanged_=true;
     }
-    //dsp_->updatefiltro2k(value2k);
+    dsp_->updatefiltro2k(value2k);
     MainWindow::value7=value2k;
     this->repaint();
     ;

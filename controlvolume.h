@@ -56,9 +56,16 @@ public:
     * Filter the in buffer and leave the result in out
     */
 
-   float  val_ant16k[19];
+   float val_ant16k[19];
    float val_ant8k[34];
    float val_ant4k[74];
+   float val_ant2k[199];
+   float val_ant1k[299];
+   float val_ant500[549];
+   float val_ant250[949];
+   float val_ant125[1799];
+   float val_ant64[3499];
+   float val_ant32[6999];
 
    void BancoFiltros(int blockSize,
                      int volumeGain,int g32,int g64,int g125,int g250,int g500,int g1k,int g2k,int g4k,int g8k,int g16k,bool inicial,
@@ -73,26 +80,63 @@ public:
    void filter32(int blockSize,
                  int g32,
                  float* in,
-                 float *out,
+                 float* out,
                  bool inicial);
+
+   void filter64(int blockSize,
+                 int g64,
+                 float* in,
+                 float* out,
+                 bool inicial);
+
+   void filter125(int blockSize,
+                 int g125,
+                 float* in,
+                 float* out,
+                 bool inicial);
+
+   void filter250(int blockSize,
+                  int g250,
+                  float* in,
+                  float* out,
+                  bool inicial);
+
+   void filter500(int blockSize,
+                 int g500,
+                 float* in,
+                 float* out,
+                 bool inicial);
+
+   void filter1k(int blockSize,
+                  int g1k,
+                  float* in,
+                  float* out,
+                  bool inicial);
+
+   void filter2k(int blockSize,
+                  int g2k,
+                  float* in,
+                  float* out,
+                  bool inicial);
+
 
    void filter4k(int blockSize,
                   int g4k,
                   float* in,
-                  float *out,
+                  float* out,
                   bool inicial);
 
 
    void filter8k(int blockSize,
                   int g8k,
                   float* in,
-                  float *out,
+                  float* out,
                   bool inicial);
 
    void filter16k(int blockSize,
                   int g16k,
                   float* in,
-                  float *out,
+                  float* out,
                   bool inicial);
 
 };

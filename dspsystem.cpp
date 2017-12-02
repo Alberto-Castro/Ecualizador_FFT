@@ -61,6 +61,30 @@ void dspSystem::updatefiltro32(int value32){
    g32=value32;
 }
 
+void dspSystem::updatefiltro63(int value64){
+   g64=value64;
+}
+
+void dspSystem::updatefiltro125(int value125){
+   g125=value125;
+}
+
+void dspSystem::updatefiltro250(int value250){
+   g250=value250;
+}
+
+void dspSystem::updatefiltro500(int value500){
+   g500=value500;
+}
+
+void dspSystem::updatefiltro1k(int value1k){
+   g1k=value1k;
+}
+
+void dspSystem::updatefiltro2k(int value2k){
+   g2k=value2k;
+}
+
 void dspSystem::updatefiltro4k(int value4k){
    g4k=value4k;
 }
