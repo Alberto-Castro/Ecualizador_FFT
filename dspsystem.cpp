@@ -61,7 +61,7 @@ void dspSystem::updatefiltro32(int value32){
    g32=value32;
 }
 
-void dspSystem::updatefiltro63(int value64){
+void dspSystem::updatefiltro64(int value64){
    g64=value64;
 }
 
@@ -159,6 +159,47 @@ bool dspSystem::process(float* in,float* out) {
 
   }
   return true;
+}
+
+int dspSystem::energia1(){
+
+    return cv_->energia1_();
+}
+
+int dspSystem::energia2(){
+    return cv_->energia2_();
+}
+
+int dspSystem::energia3(){
+    return cv_->energia3_();
+}
+
+int dspSystem::energia4(){
+    return cv_->energia4_();
+}
+
+int dspSystem::energia5(){
+    return cv_->energia5_();
+}
+
+int dspSystem::energia6(){
+    return cv_->energia6_();
+}
+
+int dspSystem::energia7(){
+    return cv_->energia7_();
+}
+
+int dspSystem::energia8(){
+    return cv_->energia8_();
+}
+
+int dspSystem::energia9(){
+    return cv_->energia9_();
+}
+
+int dspSystem::energia10(){
+    return cv_->energia10_();
 }
 
 /**

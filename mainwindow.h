@@ -93,9 +93,6 @@ private:
      int value8;
      int value9;
      int value10;
-
-protected:
-     void paintEvent(QPaintEvent *e);
      
    private slots:
      void on_fileEdit_returnPressed();
@@ -116,6 +113,7 @@ protected:
      void on_Filtro8k_valueChanged(int value8k);
      void on_Filtro16k_valueChanged(int value16k);
      void on_Predeterminado_activated(int index);
+     void energia();
 };
 
 

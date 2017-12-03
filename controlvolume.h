@@ -56,17 +56,6 @@ public:
     * Filter the in buffer and leave the result in out
     */
 
-   float val_ant16k[19];
-   float val_ant8k[34];
-   float val_ant4k[74];
-   float val_ant2k[199];
-   float val_ant1k[299];
-   float val_ant500[549];
-   float val_ant250[949];
-   float val_ant125[1799];
-   float val_ant64[3499];
-   float val_ant32[6999];
-
    void BancoFiltros(int blockSize,
                      int volumeGain,int g32,int g64,int g125,int g250,int g500,int g1k,int g2k,int g4k,int g8k,int g16k,bool inicial,
                      float *in,
@@ -139,6 +128,43 @@ public:
                   float* out,
                   bool inicial);
 
+   int Cal_Energias(int blockSize,
+                    double *in);
+
+   int energia1_();
+   int energia2_();
+   int energia3_();
+   int energia4_();
+   int energia5_();
+   int energia6_();
+   int energia7_();
+   int energia8_();
+   int energia9_();
+   int energia10_();
+
+   int energia32; //variables para medir la energia
+   int energia64;
+   int energia125;
+   int energia250;
+   int energia500;
+   int energia1k;
+   int energia2k;
+   int energia4k;
+   int energia8k;
+   int energia16k;
+
+   int E1;int E2;int E3;int E4;int E5;int E6;int E7;int E8;int E9;int E10;
+
+   float val_ant16k[49];
+   float val_ant8k[34];
+   float val_ant4k[74];
+   float val_ant2k[74];//149
+   float val_ant1k[74];//249
+   float val_ant500[74];//549
+   float val_ant250[74];//949
+   float val_ant125[74];//1799
+   float val_ant64[74];//3499
+   float val_ant32[74];//6999
 };
 
 

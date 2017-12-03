@@ -71,7 +71,7 @@ public:
   void updateVolume(int value);
 
   void updatefiltro32(int value32);
-  void updatefiltro63(int value63);
+  void updatefiltro64(int value64);
   void updatefiltro125(int value125);
   void updatefiltro250(int value250);
   void updatefiltro500(int value500);
@@ -81,6 +81,17 @@ public:
   void updatefiltro8k(int value8k);
   void updatefiltro16k(int value16k);
   virtual void updateinicio(bool saber);
+
+  int energia1();
+  int energia2();
+  int energia3();
+  int energia4();
+  int energia5();
+  int energia6();
+  int energia7();
+  int energia8();
+  int energia9();
+  int energia10();
 
 protected:
 
